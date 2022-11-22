@@ -15,8 +15,8 @@ public class ListDisplay implements Actions {
 
     @Override
     public void executeAction(String command) {
-        for (int i = 0; i < ListOfLists.mList.size(); i++) {
-            list listo = ListOfLists.mList.get(i);
+        for (int i = 0; i < menu.mList.size(); i++) {
+            list listo = menu.mList.get(i);
             System.out.println(listo.getName());
         }
 

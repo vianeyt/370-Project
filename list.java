@@ -6,7 +6,6 @@ import java.util.Map;
 public class list {
     private String id;
     private String name;
-    public static Map<String, Task> tasks = new LinkedHashMap<>(); // meant to br
     public static boolean applicationRunning = true;
 
     /*

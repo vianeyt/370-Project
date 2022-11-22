@@ -7,7 +7,6 @@ public class TasksDisplay implements Actions {
         System.out.println("These are all the tasks currently");
     }
 
-
     @Override
     public String readUserInput() {
         throw new UnsupportedOperationException("The requested operation is not supported.");
@@ -15,7 +14,7 @@ public class TasksDisplay implements Actions {
 
     @Override
     public void executeAction(String command) {
-        list.tasks.forEach((key, task) -> {
+        menu.listOfTasks.forEach((task) -> {
             System.out.println("ID: " + task.getId() + ", Name: " + task.getName());
         });
 

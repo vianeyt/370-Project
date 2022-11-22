@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -5,9 +6,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class menu {
-
-    // public static Map<String, Task> tasks = new LinkedHashMap<>();
-    // public static boolean applicationRunning = true;
+    public static ArrayList<list> mList = new ArrayList<list>();
+    public static ArrayList<Task> listOfTasks = new ArrayList<Task>();
 
     public void start() {
         while (list.applicationRunning) {
@@ -46,7 +46,7 @@ public class menu {
             // System.out.println("Your list is empty, add tasks first! ");
             // }
             case Actions.displayTask:
-                if (list.tasks.size() > 0) {
+                if (listOfTasks.size() > 0) {
                     action = new TasksDisplay();
                     action.showActionInformation();
                     action.executeAction(null);
@@ -55,7 +55,7 @@ public class menu {
                 }
                 break;
             case Actions.displayLists:
-                if (ListOfLists.mList.size() > 0) {
+                if (listOfTasks.size() > 0) {
                     action = new ListDisplay();
                     action.showActionInformation();
                     action.executeAction(null);
