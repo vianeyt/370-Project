@@ -6,9 +6,9 @@ public class AddTask implements Actions {
     public void showActionInformation() {
         System.out.println("");
         System.out.println("To add a new task, please follow the instructions and press ENTER:");
-        System.out.println("Enter name of list you wish to add this task to followed by the name of the task");
+        System.out.println("Enter name of the task followed by a ',' and then name of the list");
         System.out.println("");
-        System.out.println("Enter 0 to RETURN to menu"); // find a way to return to menu
+        // System.out.println("Enter 0 to RETURN to menu"); find a way to return to menu
     }
 
     @Override
@@ -33,7 +33,7 @@ public class AddTask implements Actions {
                 menu.listOfTasks.add(task);
             }
         }
-        System.out.println(task.getName() + " added to " + task.getId() + " !\n");
+        System.out.println(task.getId() + " added to " + task.getName() + " !\n");
     }
 
 }

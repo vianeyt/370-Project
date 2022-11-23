@@ -76,9 +76,10 @@ public class menu {
                 + "\n3. Remove a list"
                 + "\n4. Remove a task"
                 + "\n5. Copy a task"
-                + "\n6. Display tasks"
-                + "\n7. Display lists"
-                + "\n8. Exit program";
+                + "\n6. Edit a task"
+                + "\n7. Display all task"
+                + "\n8. Display all lists"
+                + "\n9. Exit program";
         System.out.println(menu);
     }
 

@@ -1,8 +1,8 @@
 
 public class Task {
 
-    private String id;
-    private String name;
+    private String id; // name of tasks
+    private String name; // name of list it belongs to
 
     public String getId() {
         return id;
@@ -19,7 +19,6 @@ public class Task {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public static Task buildTask(String id, String name) {
         Task task = new Task();

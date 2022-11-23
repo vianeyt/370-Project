@@ -15,7 +15,7 @@ public class TasksDisplay implements Actions {
     @Override
     public void executeAction(String command) {
         menu.listOfTasks.forEach((task) -> {
-            System.out.println("ID: " + task.getId() + ", Name: " + task.getName());
+            System.out.println("List: " + task.getName() + ", Task: " + task.getId());
         });
 
     }
