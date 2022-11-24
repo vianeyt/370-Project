@@ -55,12 +55,12 @@ public class menu {
                 }
                 break;
             case Actions.displayLists:
-                if (listOfTasks.size() > 0) {
+                if (mList.size() > 0) {
                     action = new ListDisplay();
                     action.showActionInformation();
                     action.executeAction(null);
                 } else {
-                    System.out.println("Your list is empty, add tasks first! ");
+                    System.out.println("No lists, create one first! ");
                 }
                 break;
             case Actions.exitProgram:
