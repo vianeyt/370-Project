@@ -37,14 +37,15 @@ public class menu {
                     action.executeAction(command1);
                 break;
 
-            // case Actions.copyTask:
-            // if (list.tasks.size() > 0) {
-            // action = new copyTask();
-            // action.showActionInformation();
-            // action.executeAction(null);
-            // } else {
-            // System.out.println("Your list is empty, add tasks first! ");
-            // }
+            case Actions.copyList:
+                if (mList.size() > 0) {
+                    action = new copyList();
+                    action.showActionInformation();
+                    String command2 = action.readUserInput();
+                    action.executeAction(command2);
+                } else {
+                    System.out.println("No lists created yet, need to have a list first! ");
+                }
             case Actions.displayTask:
                 if (listOfTasks.size() > 0) {
                     action = new TasksDisplay();
