@@ -39,10 +39,14 @@ public class copyList implements Actions {
         for (int i = 0; i < menu.mList.size(); i++) {
             list listo = menu.mList.get(i);
             if (listo.getName().equals(name)) { // if the list exists
-                for (int j = 0; j < listo.list.size(); j++) {
-                    Task copiedTask = listo.list.get(i);
-                    listCopy.addTask(copiedTask);
-                }
+                // for (int j = 0; j < listo.size; j++) {
+                // Task copiedTask = listo.getTask;
+                // listCopy.addTask(copiedTask);
+                // }
+                System.out.println(listo.size);
+                System.out.println("List exists!");
+            } else {
+                System.out.println("list does not exist");
             }
         }
         menu.mList.add(listCopy);
