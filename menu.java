@@ -28,6 +28,13 @@ public class menu {
                 if (!command.equals("0"))
                     action.executeAction(command);
                 break;
+            case Actions.editTask:
+                action = new editTask();
+                action.showActionInformation();
+                String command6 = action.readUserInput();
+                if (!command6.equals("6"))
+                    action.executeAction(command6);
+                break;
 
             case Actions.addTask:
                 action = new AddTask();
