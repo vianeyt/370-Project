@@ -25,6 +25,11 @@ public class AddList implements Actions {
         list list1 =  list.buildList(parts[0]);
 //        ListOfLists mList = new ListOfLists();
         menu.mList.add(list1);
+        //Memento Design Pattern
+        menu.originator.setList(list1);
+        menu.caretaker.addMemento(menu.originator.saveToMemento());
+        menu.listVersions++;
+        menu.currListVer++;
         System.out.println(list1.getName() + " has been added!\n");
 
     }

@@ -8,6 +8,10 @@ import java.util.Scanner;
 public class menu {
     public static ArrayList<list> mList = new ArrayList<list>();
     public static ArrayList<Task> listOfTasks = new ArrayList<Task>();
+    //Memento Design Pattern
+    public static Caretaker caretaker = new Caretaker();
+    public static Originator originator = new Originator();
+    public static int listVersions = 0, currListVer = 0;
 
     public void start() {
         while (list.applicationRunning) {
