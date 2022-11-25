@@ -18,7 +18,6 @@ public class AddTask implements Actions {
         System.out.print("Enter Information: ");
         Scanner in = new Scanner(System.in);
         String userInput = in.nextLine();
-        in.close();
         return userInput;
 
     }

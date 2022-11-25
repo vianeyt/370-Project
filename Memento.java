@@ -9,6 +9,4 @@ public class Memento {
     public list getList(){
         return this.sl;
     }
-
-    
 }
