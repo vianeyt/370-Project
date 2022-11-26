@@ -75,6 +75,24 @@ public class menu {
                     System.out.println("No lists, create one first! ");
                 }
                 break;
+            case Actions.removeTask:
+                action = new removeTask();
+                action.showActionInformation();
+                String id = action.readUserInput();
+                if(!id.equals("0")){
+                    action.executeAction(id);
+                } else {
+                    System.out.println("No Tasks in List");
+                } break;
+            case Actions.removeList:
+                action = new removeList();
+                action.showActionInformation();
+                String id2 = action.readUserInput();
+                if(!id2.equals("0")){
+                    action.executeAction(id2);
+                } else {
+                    System.out.println("There is no list, create one first");
+                } break;
             case Actions.exitProgram:
                 list.applicationRunning = false;
                 break;
