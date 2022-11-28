@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -39,12 +40,13 @@ public class copyList implements Actions {
         for (int i = 0; i < menu.mList.size(); i++) {
             list listo = menu.mList.get(i);
             if (listo.getName().equals(name)) { // if the list exists
-                // for (int j = 0; j < listo.size; j++) {
-                // Task copiedTask = listo.getTask;
+                System.out.println("List exists!");
+                // ArrayList<Task> n = listo.getList();
+                System.out.println(listo.getList());
+                // for (int j = 0; j < n.size(); j++) {
+                // Task copiedTask = (Task) n.get(i);
                 // listCopy.addTask(copiedTask);
                 // }
-                System.out.println(listo.size);
-                System.out.println("List exists!");
             } else {
                 System.out.println("list does not exist");
             }

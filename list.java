@@ -38,7 +38,7 @@ public class list {
         this.name = name;
     }
 
-    public List<Task> getList() {
+    public ArrayList<Task> getList() {
         return this.list;
     }
 
