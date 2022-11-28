@@ -8,6 +8,10 @@ import java.util.Scanner;
 public class menu {
     public static ArrayList<list> mList = new ArrayList<list>();
     public static ArrayList<Task> listOfTasks = new ArrayList<Task>();
+    //Memento Design Pattern
+    public static Caretaker caretaker = new Caretaker();
+    public static Originator originator = new Originator();
+    public static int listVersions = 0, currListVer = 0;
 
     public void start() {
         while (list.applicationRunning) {
@@ -27,6 +31,13 @@ public class menu {
                 String command = action.readUserInput();
                 if (!command.equals("0"))
                     action.executeAction(command);
+                break;
+            case Actions.editTask:
+                action = new editTask();
+                action.showActionInformation();
+                String command6 = action.readUserInput();
+                if (!command6.equals("6"))
+                    action.executeAction(command6);
                 break;
 
             case Actions.addTask:
@@ -64,6 +75,24 @@ public class menu {
                     System.out.println("No lists, create one first! ");
                 }
                 break;
+            case Actions.removeTask:
+                action = new removeTask();
+                action.showActionInformation();
+                String id = action.readUserInput();
+                if(!id.equals("0")){
+                    action.executeAction(id);
+                } else {
+                    System.out.println("No Tasks in List");
+                } break;
+            case Actions.removeList:
+                action = new removeList();
+                action.showActionInformation();
+                String id2 = action.readUserInput();
+                if(!id2.equals("0")){
+                    action.executeAction(id2);
+                } else {
+                    System.out.println("There is no list, create one first");
+                } break;
             case Actions.exitProgram:
                 list.applicationRunning = false;
                 break;

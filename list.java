@@ -12,6 +12,7 @@ public class list {
      * The list which contains ToDoTask
      */
     public ArrayList<Task> list = new ArrayList<Task>();
+    public char[] size;
 
     public list() {
 
