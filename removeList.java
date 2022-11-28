@@ -5,7 +5,7 @@ public class removeList implements Actions {
     public void showActionInformation() {
         System.out.println("");
         System.out.println("To remove a list, please follow the instructions and press ENTER");
-        System.out.println("Enter name of lists and press ENTER");
+        System.out.println("Enter name of list and press ENTER");
         System.out.println("");
     }
 
@@ -20,6 +20,10 @@ public class removeList implements Actions {
 
     @Override
     public void executeAction(String command) {
-
+        for(int i = 0; i < menu.mList.size(); i++){
+            if(menu.mList.get(i).getName().equals(command)){
+                menu.mList.remove(i);
+            }
+        }
     }
 }
