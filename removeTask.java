@@ -25,5 +25,6 @@ public class removeTask implements Actions {
                 menu.listOfTasks.remove(i);
             }
         }
+        System.out.println("\nTask: " + command + " has been removed from the list. \n");
     }
 }

@@ -25,5 +25,6 @@ public class removeList implements Actions {
                 menu.mList.remove(i);
             }
         }
+        System.out.println("\nList: " + command + " has been removed. \n");
     }
 }
