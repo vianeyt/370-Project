@@ -3,12 +3,11 @@ interface Actions {
     public static int addTask = 2; // - edison
     public static int removeList = 3; // chirag
     public static int removeTask = 4; // -chirag
-    public static int copyList = 5; // needs to be worked on -v
-    public static int editTask = 6; // - ergys
-    public static int displayTask = 7; // done -v
-    public static int displayLists = 8; // done -v
-    public static int undo = 9;
-    public static int exitProgram = 10; // done -v
+    public static int editTask = 5; // - ergys
+    public static int displayTask = 6; // done -v
+    public static int displayLists = 7; // done -v
+    public static int undo = 8;
+    public static int exitProgram = 9; // done -v
 
     /*
      * displays the description of the action

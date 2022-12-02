@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class menu {
     public static ArrayList<list> mList = new ArrayList<list>();
     public static ArrayList<Task> listOfTasks = new ArrayList<Task>();
-    //Memento Design Pattern
+    // Memento Design Pattern
     public static Caretaker caretaker = new Caretaker();
     public static Originator originator = new Originator();
     static int currListVer = -1;
@@ -46,18 +46,8 @@ public class menu {
                 String command1 = action.readUserInput();
                 if (!command1.equals("0"))
                     action.executeAction(command1);
-                    System.out.println("caretaker current size: " + caretaker.getSize());
+                System.out.println("caretaker current size: " + caretaker.getSize());
                 break;
-
-            case Actions.copyList:
-                if (mList.size() > 0) {
-                    action = new copyList();
-                    action.showActionInformation();
-                    String command2 = action.readUserInput();
-                    action.executeAction(command2);
-                } else {
-                    System.out.println("No lists created yet, need to have a list first! ");
-                }
             case Actions.displayTask:
                 if (listOfTasks.size() > 0) {
                     action = new TasksDisplay();
@@ -80,28 +70,30 @@ public class menu {
                 action = new removeTask();
                 action.showActionInformation();
                 String id = action.readUserInput();
-                if(!id.equals("0")){
+                if (!id.equals("0")) {
                     action.executeAction(id);
                 } else {
                     System.out.println("No Tasks in List");
-                } break;
+                }
+                break;
             case Actions.removeList:
                 action = new removeList();
                 action.showActionInformation();
                 String id2 = action.readUserInput();
-                if(!id2.equals("0")){
+                if (!id2.equals("0")) {
                     action.executeAction(id2);
                 } else {
                     System.out.println("There is no list, create one first");
-                } break;
+                }
+                break;
             case Actions.undo:
                 action = new Undo();
                 action.showActionInformation();
-                if(currListVer >= 1){
+                if (currListVer >= 1) {
                     currListVer--;
-                    String cmd=Integer.toString(currListVer);
+                    String cmd = Integer.toString(currListVer);
                     action.executeAction(cmd);
-                }else{
+                } else {
                     System.out.println("No previous versions to retrieve!");
                 }
                 break;
@@ -117,17 +109,16 @@ public class menu {
                 + "\n2. Add a task."
                 + "\n3. Remove a list"
                 + "\n4. Remove a task"
-                + "\n5. Copy a task"
-                + "\n6. Edit a task"
-                + "\n7. Display all task"
-                + "\n8. Display all lists"
-                + "\n9. Undo"
-                + "\n10. Exit program";
+                + "\n5. Edit a task"
+                + "\n6. Display all task"
+                + "\n7. Display all lists"
+                + "\n8. Undo"
+                + "\n9. Exit program";
         System.out.println(menu);
     }
 
     public int readAction() {
-        List<Integer> availableActions = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> availableActions = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
         while (true) {
             try {
                 System.out.print("Enter action: ");
