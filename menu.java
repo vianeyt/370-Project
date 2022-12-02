@@ -11,7 +11,7 @@ public class menu {
     //Memento Design Pattern
     public static Caretaker caretaker = new Caretaker();
     public static Originator originator = new Originator();
-    public static int listVersions = 0, currListVer = 0;
+    static int currListVer = -1;
 
     public void start() {
         while (list.applicationRunning) {
@@ -46,6 +46,7 @@ public class menu {
                 String command1 = action.readUserInput();
                 if (!command1.equals("0"))
                     action.executeAction(command1);
+                    System.out.println("caretaker current size: " + caretaker.getSize());
                 break;
 
             case Actions.copyList:
@@ -93,6 +94,17 @@ public class menu {
                 } else {
                     System.out.println("There is no list, create one first");
                 } break;
+            case Actions.undo:
+                action = new Undo();
+                action.showActionInformation();
+                if(currListVer >= 1){
+                    currListVer--;
+                    String cmd=Integer.toString(currListVer);
+                    action.executeAction(cmd);
+                }else{
+                    System.out.println("No previous versions to retrieve!");
+                }
+                break;
             case Actions.exitProgram:
                 list.applicationRunning = false;
                 break;
@@ -109,12 +121,13 @@ public class menu {
                 + "\n6. Edit a task"
                 + "\n7. Display all task"
                 + "\n8. Display all lists"
-                + "\n9. Exit program";
+                + "\n9. Undo"
+                + "\n10. Exit program";
         System.out.println(menu);
     }
 
     public int readAction() {
-        List<Integer> availableActions = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        List<Integer> availableActions = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         while (true) {
             try {
                 System.out.print("Enter action: ");

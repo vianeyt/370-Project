@@ -1,12 +1,17 @@
+import java.util.ArrayList;
+
 public class Memento {
 
-    private list sl;
+    private ArrayList<Task> sl = new ArrayList<Task>();
 
-    Memento(list listSave){
-        this.sl = listSave;
+
+    Memento(ArrayList<Task> listSave){
+        for(int i=0; i<listSave.size();i++){
+            this.sl.add(listSave.get(i));
+        }
     }
 
-    public list getList(){
+    public ArrayList<Task> getList(){
         return this.sl;
     }
 }

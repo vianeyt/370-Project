@@ -7,7 +7,8 @@ interface Actions {
     public static int editTask = 6; // - ergys
     public static int displayTask = 7; // done -v
     public static int displayLists = 8; // done -v
-    public static int exitProgram = 9; // done -v
+    public static int undo = 9;
+    public static int exitProgram = 10; // done -v
 
     /*
      * displays the description of the action

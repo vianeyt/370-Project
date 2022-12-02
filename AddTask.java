@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class AddTask implements Actions {
 
@@ -31,12 +32,11 @@ public class AddTask implements Actions {
             list listo = menu.mList.get(i);
             if (listo.getName().equals(name)) {
                 menu.listOfTasks.add(task);
-                menu.originator.setList(listo);
             }
         }
-        //Memento Design Pattern
+        // //Memento Design Pattern
+        menu.originator.setList(menu.listOfTasks);
         menu.caretaker.addMemento(menu.originator.saveToMemento());
-        menu.listVersions++;
         menu.currListVer++;
         System.out.println(task.getId() + " added to " + task.getName() + " !\n");
     }

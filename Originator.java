@@ -1,16 +1,21 @@
-public class Originator {
-    private list listToSave;
+import java.util.ArrayList;
 
-    public void setList(list newList){
-        this.listToSave = newList;
+public class Originator {
+    private ArrayList<Task> listToSave = new ArrayList<Task>();
+
+    public void setList(ArrayList<Task> newList){
+        this.listToSave.clear();
+        for(int i=0; i<newList.size();i++){
+            this.listToSave.add(newList.get(i));
+        }
     }
 
     public Memento saveToMemento(){
         return new Memento(this.listToSave);
     }
 
-    public list restoreFromMemento(Memento memento){
-        listToSave = memento.getList();
-        return listToSave;
+    public ArrayList<Task> restoreFromMemento(Memento memento){
+        this.listToSave = memento.getList();
+        return this.listToSave;
     }
 }
