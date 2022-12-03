@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class removeTask implements Actions {
@@ -23,9 +24,11 @@ public class removeTask implements Actions {
 
     @Override
     public void executeAction(String command) {
-        for (int i = 0; i < menu.listOfTasks.size(); i++) {
-            if (menu.listOfTasks.get(i).getId().equals(command)) {
-                menu.listOfTasks.remove(i);
+        instance.setTask(menu.listOfTasks);
+        List<Task> listOfTasks = instance.getTask();
+        for (int i = 0; i < listOfTasks.size(); i++) {
+            if (listOfTasks.get(i).getId().equals(command)) {
+                listOfTasks.remove(i);
             }
         }
         instance.setMessage("Task: " + command + " has been removed.\n");

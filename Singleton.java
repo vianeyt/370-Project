@@ -1,15 +1,16 @@
 import java.util.ArrayList;
-
+//Thread Safe Singleton
 public class Singleton {
-    private static Singleton instance = null;
-    private ArrayList<list> mList = new ArrayList<list>();
-    private ArrayList<Task> listOfTasks = new ArrayList<Task>();
+    private static Singleton instance;
+    private ArrayList<list> mList;
+    private ArrayList<Task> listOfTasks;
 
     private Singleton(){}
 
-    public static Singleton getInstance(){
-        if(instance == null)
+    public static synchronized Singleton getInstance(){
+        if(instance == null) {
             instance = new Singleton();
+        }
         return instance;
     }
 
