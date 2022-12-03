@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Caretaker {
-    ArrayList<Memento> savedLists = new ArrayList<Memento>();
+    private ArrayList<Memento> savedLists = new ArrayList<Memento>();
 
     public void addMemento(Memento memento){
-        savedLists.add(memento);
+        this.savedLists.add(memento);
     }
 
     public Memento getMemento(int index){
@@ -13,6 +13,6 @@ public class Caretaker {
     }
 
     public int getSize(){
-        return savedLists.size();
+        return this.savedLists.size();
     }
 }
