@@ -30,6 +30,6 @@ public class Singleton {
     }
 
     public void setMessage(String message){
-        System.out.println(message);
+        System.out.println("\nSingleton\n" + message);
     }
 }

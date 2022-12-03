@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class removeTask implements Actions {
 
     Singleton instance = Singleton.getInstance();
+
     @Override
     public void showActionInformation() {
         System.out.println("");
@@ -22,11 +23,11 @@ public class removeTask implements Actions {
 
     @Override
     public void executeAction(String command) {
-        for(int i = 0; i < menu.listOfTasks.size(); i++){
-            if(menu.listOfTasks.get(i).getId().equals(command)){
+        for (int i = 0; i < menu.listOfTasks.size(); i++) {
+            if (menu.listOfTasks.get(i).getId().equals(command)) {
                 menu.listOfTasks.remove(i);
             }
         }
-        instance.setMessage("\nSingleton\nTask: " + command + " has been removed.\n");
+        instance.setMessage("Task: " + command + " has been removed.\n");
     }
 }

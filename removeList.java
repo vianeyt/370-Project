@@ -28,6 +28,6 @@ public class removeList implements Actions {
                 menu.mList.remove(i);
             }
         }
-        instance.setMessage("Singleton\nList: " + command + " has been removed.\n");
+        instance.setMessage("List: " + command + " has been removed.\n");
     }
 }
