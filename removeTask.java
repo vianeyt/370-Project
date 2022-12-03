@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class removeTask implements Actions {
+
+    Singleton instance = Singleton.getInstance();
     @Override
     public void showActionInformation() {
         System.out.println("");
@@ -25,6 +27,6 @@ public class removeTask implements Actions {
                 menu.listOfTasks.remove(i);
             }
         }
-        System.out.println("\nTask: " + command + " has been removed from the list. \n");
+        instance.setMessage("\nSingleton\nTask: " + command + " has been removed.\n");
     }
 }
